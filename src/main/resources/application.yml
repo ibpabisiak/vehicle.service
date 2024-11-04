@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: vehicle.service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: dummy
+  jpa:
+    hibernate:
+      ddl-auto: update
