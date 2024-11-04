@@ -37,4 +37,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/currency-converter-service:dev
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/vehicle-service:dev
