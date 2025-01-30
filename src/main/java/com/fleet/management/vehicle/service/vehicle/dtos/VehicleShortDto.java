@@ -8,7 +8,7 @@ import lombok.Setter;
 public class VehicleShortDto {
 
     private String id;
-    private String make;
+    private String brand;
     private String model;
     private String plateNumber;
     private String status;
