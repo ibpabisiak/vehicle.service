@@ -12,7 +12,7 @@ import lombok.Setter;
 public class VehicleDto {
 
     private String id;
-    private String make;
+    private String brand;
     private String model;
     private Integer year;
     private String vin;
