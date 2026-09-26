@@ -1,4 +1,4 @@
-FROM openjdk:25-jdk-slim
+FROM openjdk:25-ea-21-jdk-slim
 EXPOSE 8080
 ENV JAVA_OPTS="-XX:+UseContainerSupport"
 ARG JAR_FILE="build/libs/vehicle.service-0.0.1-SNAPSHOT.jar"
