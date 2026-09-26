@@ -5,14 +5,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class VehicleDto {
 
-    private String id;
-    private String brand;
+    private UUID id;
+    private String manufacturer;
     private String model;
     private Integer year;
     private String vin;

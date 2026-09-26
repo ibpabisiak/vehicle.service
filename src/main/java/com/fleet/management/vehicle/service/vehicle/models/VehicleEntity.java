@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Entity
 @Table(name = "vehicles")
 @Getter
@@ -17,8 +19,8 @@ public class VehicleEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
-    private String make;
+    private UUID id;
+    private String manufacturer;
     private String model;
     private Integer year;
     private String vin;

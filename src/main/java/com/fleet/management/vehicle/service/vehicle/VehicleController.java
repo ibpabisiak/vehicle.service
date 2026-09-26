@@ -7,31 +7,33 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
+@RequestMapping("/api/v1/vehicles")
 @CrossOrigin
 @RequiredArgsConstructor
 public class VehicleController {
 
     private final VehicleService vehicleService;
 
-    @PostMapping("/api/vehicles")
+    @PostMapping
     public ResponseEntity<VehicleDto> createVehicle(@RequestBody VehicleDto vehicleDto) {
         return ResponseEntity.ok(vehicleService.upsert(vehicleDto));
     }
 
-    @GetMapping("/api/vehicles")
+    @GetMapping
     public ResponseEntity<List<VehicleShortDto>> getAllVehicles() {
         return ResponseEntity.ok(vehicleService.getAllVehicles());
     }
 
-    @GetMapping("/api/vehicles/{vehicleId}")
-    public ResponseEntity<VehicleDto> getVehicleById(@PathVariable("vehicleId") String vehicleId) {
+    @GetMapping("/{vehicleId}")
+    public ResponseEntity<VehicleDto> getVehicleById(@PathVariable("vehicleId") UUID vehicleId) {
         return ResponseEntity.ok(vehicleService.getVehicle(vehicleId));
     }
 
-    @DeleteMapping("/api/vehicles/{vehicleId}")
-    public ResponseEntity<Void> deleteVehicle(@PathVariable("vehicleId") String vehicleId) {
+    @DeleteMapping("/{vehicleId}")
+    public ResponseEntity<Void> deleteVehicle(@PathVariable("vehicleId") UUID vehicleId) {
         vehicleService.deleteVehicle(vehicleId);
         return ResponseEntity.ok().build();
     }
