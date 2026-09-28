@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: vehicle-service
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: vehicle-service
+
+  template:
+    metadata:
+      labels:
+        app: vehicle-service
+
+    spec:
+      containers:
+        - name: vehicle-service
+          image: bpabisiak/vehicle-service:dev
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://172.23.183.38:5432/vehicle-service-db
